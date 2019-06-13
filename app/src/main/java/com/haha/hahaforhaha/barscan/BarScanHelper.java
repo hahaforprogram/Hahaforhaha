@@ -7,7 +7,6 @@ import android.util.Log;
 import com.haha.hahaforhaha.MyApplication;
 import com.haha.hahaforhaha.contraint.AppConfig;
 import com.haha.hahaforhaha.contraint.AppCookie;
-import com.haha.hahaforhaha.localdb.LocalDbDao;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -49,7 +48,7 @@ public class BarScanHelper {
                     //扫描的二维码类型不与系统设定的相符 则提示 报错
                     if ("LOGIN".equals(AppCookie.barscantype.getCurrentBarscantype()) && strBarInfo[0].equals("NURSE")) {
                         /**第一次登陆LOGIN只验证当前app数据库是否存在此用户*/
-                        Boolean mboolean = (Boolean) LocalDbDao.appUserLogin(strBarInfo[1], AppCookie.userinfo.getWardcode());
+                        Boolean mboolean = true;// (Boolean) LocalDbDao.appUserLogin(strBarInfo[1], AppCookie.userinfo.getWardcode());
                         if (mboolean) {
                             observer.onNext(true);
                         } else {

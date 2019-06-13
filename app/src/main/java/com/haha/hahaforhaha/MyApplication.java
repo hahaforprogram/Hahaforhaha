@@ -1,7 +1,8 @@
 package com.haha.hahaforhaha;
 
-import android.app.Application;
 import android.content.Context;
+
+import androidx.multidex.MultiDexApplication;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.haha.hahaforhaha.contraint.AppConfig;
@@ -17,7 +18,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.tencent.mmkv.MMKV;
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
     private static final String TAG = "Myapplication";
     private static final Boolean isArouteDebug = true;
     private static MyApplication instance;
